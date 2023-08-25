@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My first Renderer</title>
+        <style>
+            html,body{
+                margin:0;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canv" width="1000px" height="1000px">
+
+        </canvas>
+        <script>
+            let canv = document.querySelector("#canv")
+            let ctx = canv.getContext("2d")
+
+
+            
+
+            ctx.fillStyle = "orange"
+            ctx.strokeStyle = "transparent"
+            ctx.beginPath()
+            ctx.arc(200,100, 50, 0, degreesToRadians(360))
+            ctx.fill()
+            ctx.stroke()
+            
+            ctx.fillStyle = "blue"
+            ctx.strokeStyle = "lightblue"
+            ctx.lineWidth = 10
+            //ctx.strokeRect(0,0,100,100)
+
+            ctx.beginPath()
+            ctx.moveTo(0, 100)
+            ctx.lineTo(100, 200)
+            ctx.lineTo(200, 100)
+            ctx.lineTo(300, 200)
+            ctx.lineTo(0, 200)
+            ctx.closePath()
+            ctx.fill()
+            ctx.stroke()
+
+            
+
+            function degreesToRadians(degrees){
+               return degrees * Math.PI / 180
+            }
+
+        </script>
+    </body>
+</html>
